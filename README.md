@@ -3,6 +3,8 @@ E-commerce like auction site
 
 A video demo can be located [here](https://youtu.be/q6ccLMdzZT8?si=8LrgcayLzAHciRRC)
 
+(https://github.com/zerrynlh/BidBay/blob/main/commerce/auctions/static/images/bidbay3.png)
+
 ### Description:
 This project is a web-based application called Bidbay that allows users to post listings and place bids.
 
