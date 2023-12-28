@@ -15,6 +15,6 @@ The backend for this application was written using Python and the web framework 
 
 ### Features:
 - Create Listing: users can create a listing by providing details such as an image URL, starting price, description, etc.
-- Active Listings: user cas view active listings on the homepage.
+- Active Listings: users can view active listings on the homepage.
 - Watchlist: users can add and remove items from their watchlist.
 - Categories: users can filter by category.
