@@ -3,6 +3,7 @@ E-commerce like auction site
 
 A video demo can be located [here](https://youtu.be/q6ccLMdzZT8?si=8LrgcayLzAHciRRC)
 
+![BidBay Image:]
 (https://github.com/zerrynlh/BidBay/blob/main/commerce/auctions/static/images/bidbay3.png)
 
 ### Description:
