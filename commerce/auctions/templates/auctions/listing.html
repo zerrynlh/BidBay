@@ -1,0 +1,148 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Listing for {{ item.itemname }}{% endblock %}
+
+{% block body %}
+  {% if message %}
+    <div class="alert alert-info">
+      {{ message }}
+    </div>
+    {% endif %}
+    <h2 class="mb-4">Details: "{{ item.itemname }}"</h2>
+
+    <div class="container text-left mb-3 shadow-sm">
+
+        <div class="mb-2">
+          <div id="itemdiv">{{ item.itemname }}</div>
+          <hr>
+        </div>
+
+        <div style="display: flex" class="mb-3 myflex">
+          <div  class="me-5 mb-2" style="display: flex; flex-direction: column;"><img src="{{ item.image }}" style="max-width:100%; height:20vh;"></div>
+          <div class="col">
+            <div class="col mb-3">{{ item.description }}</div>
+            {% load humanize %}
+            <div class="col mb-2"><strong>Price:</strong> ${{ item.price | floatformat:2 | intcomma  }}</div>
+            <div class="col mb-2"><strong>Category:</strong> {{ item.get_category_display }}</div>
+            <div class="mt-2">
+            {% if is_closed %}
+
+            {% else %}
+              {% if request.user != item.seller %}
+                <form action="{% url 'listing' item.id %}" method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" name="listing_id" value="{{ item.id }}" >
+                  {% if in_watchlist %}
+                  <strong>Remove from Watchlist</strong> <button style="border: none; background-color: transparent;" type="submit" name="add_watchlist"><a><i style="color: red;" class="bi bi-x-circle-fill"></i></a></button>
+                  {% else %}
+                  <strong>Add to Watchlist</strong> <button style="border: none; background-color: transparent;" type="submit" name="add_watchlist"><a><i style="color: red;" class="bi bi-heart-fill"></i></a></button>
+                  {% endif %}
+                </form>
+              {% endif %}
+            {% endif %}
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col"><strong>Seller:</strong> {{ item.seller }}</div>
+          <div style="text-align: right;" class="col">
+            {% if is_closed %}
+
+            {% else %}
+              {% if request.user == item.seller %}
+              <form action="{% url 'close' item.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="submit">Close Listing</button>
+              </form>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+
+    </div>
+
+    <div class="row myflex">
+
+      <div class="col">
+        {% if is_closed %}
+
+        {% else %}
+          {% if request.user != item.seller %}
+          <form action="{% url 'listing' item.id %}" method="POST">
+            {% csrf_token %}
+            {{ bid_form.thebid }}
+            <input class="mt-2" type="submit" id="submit" value="Place Bid">
+          </form>
+          {% endif %}
+        {% endif %}
+        <h4 class="mt-3">Current Bids</h4>
+        <div id="biddiv" class="container shadow-sm">
+
+          <div class="row" style="text-align: center; font-weight: bold;" >
+            <div class="col">
+              User
+            </div>
+            <div class="col">
+              Bid
+            </div>
+            <div class="col">
+              Posted
+            </div>
+          </div>
+          <hr class="mt-2 mx-2">
+
+          {% if current_bids %}
+            {% for bid in current_bids %}
+            <div class="row mb-3" style="text-align: center;" >
+
+              <div class="col">
+                {{ bid.name }}
+              </div>
+              <div class="col">
+                {% load humanize %}
+                ${{ bid.bid | floatformat:2 | intcomma }}
+              </div>
+              <div class="col">
+                {{ bid.date | naturaltime}}
+              </div>
+
+            </div>
+            {% endfor %}
+          {% else %}
+          <li style="text-align: left;">There are currently no bids for this item.</li>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <div class="col">
+        <h4 class="mt-3">Comments</h4>
+        <div id="commentdiv" class="shadow-sm" >
+          {% if is_closed %}
+
+          {% else %}
+            <form action="{% url 'listing' item.id %}" method="POST">
+              {% csrf_token %}
+              {{ com_form.thecomment }}
+              <input class="mt-2 mb-4" style="width: 120px;" type="submit" id="submit" value="Add Comment">
+            </form>
+          {% endif %}
+          {% for comment in comments %}
+            {% if comment.item.id == item.id %}
+            <div class="col mb-4">
+              <b>{{ comment.name }}</b>
+              <hr>
+              <p>{{ comment.comment }}</p>
+              {% load humanize %}
+              <p>{{ comment.thedatetime | naturaltime }}</p>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+{% endblock %}
