@@ -10,8 +10,8 @@ This project is a web-based application called Bidbay that allows users to post 
 
 The backend for this application was written using Python and the web framework Django. Information is stored in a SQLite database by default.
 
-#### Requirements:
->pip3 install Django
+#### Install dependencies:
+>pip install -r requirements.txt
 
 #### To run this application:
 >python manage.py runserver
