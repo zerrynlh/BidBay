@@ -13,6 +13,9 @@ The backend for this application was written using Python and the web framework 
 #### Requirements:
 >pip3 install Django
 
+#### To run this application:
+>python manage.py runserver
+
 ### Features:
 - Create Listing: users can create a listing by providing details such as an image URL, starting price, description, etc.
 - Active Listings: users can view active listings on the homepage.
