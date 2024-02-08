@@ -19,7 +19,9 @@ The backend for this application was written using Python and the web framework 
 ### To run this application:
 
 ### Clone the repository:
->git clone <repository_url>
+```
+git clone <repository_url>
+```
 
 ### Navigate to the project directory:
 >cd <project_directory>
