@@ -24,16 +24,26 @@ git clone <repository_url>
 ```
 
 ### Navigate to the project directory:
->cd <project_directory>
+```
+cd <project_directory>
+```
 
 ### Build the Docker images:
->docker-compose build
+```
+docker-compose build
+```
 
 ### Perform database migrations:
->docker-compose run web python manage.py migrate
+```
+docker-compose run web python manage.py migrate
+```
 
 ### Start the Docker containers:
->docker-compose up
+```
+docker-compose up
+```
 
 ### To stop the application:
->docker-compose down
+```
+docker-compose down
+```
