@@ -8,7 +8,7 @@ A video demo can be located [here](https://youtu.be/q6ccLMdzZT8?si=8LrgcayLzAHci
 ### Description:
 This project is a web-based application called Bidbay that allows users to post listings and place bids.
 
-The backend for this application was written using Python and the web framework Django. Information is stored in a SQLite database by default.
+The backend for this application was written using Python and the web framework Django. Information is stored in a PostgreSQL database. Docker was utilized for containerization.
 
 #### Install dependencies:
 >pip install -r requirements.txt
