@@ -16,7 +16,7 @@ The backend for this application was written using Python and the web framework 
 - Watchlist: users can add and remove items from their watchlist.
 - Categories: users can filter by category.
 
-### To run this application:
+## To run this application:
 
 ### Clone the repository:
 ```
