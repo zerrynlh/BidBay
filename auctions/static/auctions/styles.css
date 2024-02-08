@@ -1,0 +1,92 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    position: relative;
+    min-height: 100vh;
+}
+
+h1 {
+    background-color: #FFC450;
+    padding: 10px;
+}
+
+#bodydiv {
+    padding: 20px 20px 40px 20px;
+}
+
+* {
+    font-family: 'Mulish', sans-serif;
+}
+
+#submit {
+    background-color: #FFC450;
+    border-radius: 5px;
+    border: 1px solid #FFB31F;
+    padding: 5px;
+}
+
+#itemdiv {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    background-color: #F7F7F7;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #E9E9E9;
+}
+
+@media (max-width: 500px) {
+    .myflex {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+#commentdiv {
+    background-color: #F7F7F7;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#biddiv {
+    background-color: #F7F7F7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#commentbox {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#bid {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+i {
+    font-size: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+/* styling from freeCodeCampe to create footer*/
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #FFB31F;
+    width: 100%;
+}
