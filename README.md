@@ -16,22 +16,22 @@ The backend for this application was written using Python and the web framework 
 - Watchlist: users can add and remove items from their watchlist.
 - Categories: users can filter by category.
 
-#### To run this application:
+### To run this application:
 
-## Clone the repository:
+### Clone the repository:
 >git clone <repository_url>
 
-## Navigate to the project directory:
+### Navigate to the project directory:
 >cd <project_directory>
 
-## Build the Docker images:
+### Build the Docker images:
 >docker-compose build
 
-## Perform database migrations:
+### Perform database migrations:
 >docker-compose run web python manage.py migrate
 
-## Start the Docker containers:
+### Start the Docker containers:
 >docker-compose up
 
-## To stop the application:
+### To stop the application:
 >docker-compose down
